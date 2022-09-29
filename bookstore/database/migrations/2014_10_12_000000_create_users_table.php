@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
         });
 
         //rekordok feltöltése
+        User::create(['name'=>'store', 'email'=>'store@gmail.com']);
         User::create(['name'=>'Marcsi', 'email'=>'diak1@gmail.com']);
         User::create(['name'=>'Iván', 'email'=>'diak2@gmail.com']);
     }

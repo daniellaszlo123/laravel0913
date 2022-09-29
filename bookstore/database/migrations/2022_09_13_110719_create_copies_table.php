@@ -19,12 +19,15 @@ class CreateCopiesTable extends Migration
             //létrehozza a mezőt megf névvel és össze is köti a megf. tábla megf mezőjével
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('book_id')->references('book_id')->on('books');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
 
         Copy::create(['user_id'=>1, 'book_id'=>2]);
-        Copy::create(['user_id'=>2, 'book_id'=>3]);
-        Copy::create(['user_id'=>2, 'book_id'=>3]);
+        Copy::create(['user_id'=>2, 'book_id'=>3, 'status'=>2]);
+        Copy::create(['user_id'=>2, 'book_id'=>3, 'status'=>1]);
+        Copy::create(['user_id'=>2, 'book_id'=>1]);
+        Copy::create(['user_id'=>2, 'book_id'=>2, 'status'=>1]);
     }
 
     /**

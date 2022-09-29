@@ -22,14 +22,13 @@ class CreateBooksTable extends Migration
             //$table->bigIncrements('book_id');
             $table->string('author', 32);
             $table->longText('title', 150);
-            $table->integer('pieces')->default(50);
             $table->timestamps();
         });
 
         //rekordok ide kerülnek
         Book::create(['author'=>'Bohumil Hrabal','title'=>'Gyengéd barbárok']);
-        Book::create(['author'=>'J. R. R. Tolkien','title'=>'Hobbit', 'pieces'=>10]);
-        Book::create(['author'=>'Kaczur Sándor','title'=>'Programozás Java nyelven', 'pieces'=>100]);
+        Book::create(['author'=>'J. R. R. Tolkien','title'=>'Hobbit']);
+        Book::create(['author'=>'Kaczur Sándor','title'=>'Programozás Java nyelven']);
     }
 
     /**
